@@ -1,7 +1,7 @@
 # College Projects
 This is a repo holding some of the school projects I worked on while I was studying Computer Science.
 
-# Please Read The Disclaimer Below
+# Disclaimer
 
 I'm storing those projects here on Github, and anyone is free to download and use them. Make sure to keep in mind of the following:
 
