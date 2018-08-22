@@ -1,0 +1,538 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDM_MENU MENU 
+BEGIN
+    POPUP "File"
+    BEGIN
+        MENUITEM "Exit",                        IDM_EXIT
+    END
+    POPUP "[Settings]"
+    BEGIN
+        MENUITEM "<> Game Settings...",         IDM_GAMESETTINGS
+        MENUITEM "<> Camera/Viewport Settings...", IDM_CAM_VIEW_SETTINGS
+    END
+    POPUP "[Character Design]"
+    BEGIN
+        MENUITEM "<.> Show <.>",                IDM_CHAR_SHOWDIALOG
+    END
+    POPUP "[Build]"
+    BEGIN
+        MENUITEM "Generate Code",               IDM_GENERATE
+        MENUITEM "Clean Code",                  IDM_CLEANCODE
+    END
+    POPUP "Help"
+    BEGIN
+        MENUITEM "About Game Editor...",        IDM_ABOUT
+    END
+END
+
+IDR_MOVEMENT_MENU MENU 
+BEGIN
+    POPUP "Movement Path"
+    BEGIN
+        MENUITEM "Free Style",                  IDM_MOVEMENT_FREE
+        MENUITEM "Line",                        IDM_MOVEMENT_LINE
+        MENUITEM "Circle",                      IDM_MOVEMENT_CIRCLE
+        MENUITEM "Ellipse",                     IDM_MOVEMENT_ELLIPSE
+    END
+    POPUP "Settings"
+    BEGIN
+        MENUITEM "Make Initial Node",           IDM_MOVEMENT_INITIAL
+        MENUITEM "Closed Path",                 IDM_MOVEMENT_CLOSED
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON                ICON                    "CM.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_LISTDIALOG DIALOGEX 0, 0, 219, 284
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+CAPTION "Character Data"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LISTBOX         IDC_LIST1,15,16,191,233,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Remove",IDM_REMOVE,86,256,51,15
+    CTEXT           "Characters and Collision Data",IDC_STATIC,54,4,102,9
+    PUSHBUTTON      "Select",IDM_SELECT,25,256,40,15,BS_FLAT
+    PUSHBUTTON      "Draw",IDM_DRAW,156,256,40,15,BS_FLAT
+END
+
+IDD_GAMESETTINGS DIALOGEX 0, 0, 157, 186
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Game Settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,20,161,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,85,161,50,14
+    GROUPBOX        "Window Size",IDC_STATIC,19,7,131,40
+    CTEXT           "Width",IDC_STATIC,37,19,38,11
+    EDITTEXT        IDD_WINDOW_WIDTH,38,28,34,12,ES_CENTER | ES_AUTOHSCROLL
+    CTEXT           "Height",IDC_STATIC,88,19,38,11
+    EDITTEXT        IDD_WINDOW_HEIGHT,90,28,34,12,ES_CENTER | ES_AUTOHSCROLL
+    GROUPBOX        "Window Style",IDC_STATIC,19,76,131,59
+    EDITTEXT        IDD_FRAMERATE,87,141,34,13,ES_CENTER | ES_AUTOHSCROLL
+    CTEXT           "Frame Rate:",IDC_STATIC,37,143,50,11
+    CONTROL         "Border",IDC_STYLE_BORDER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,25,89,44,14
+    CONTROL         "Caption",IDC_STYLE_CAPTION,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,91,89,44,14
+    CONTROL         "Maximize Box",IDC_STYLE_MAXIMIZE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,25,105,56,14
+    CONTROL         "Minimize Box",IDC_STYLE_MINIMIZE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,91,105,56,14
+    CONTROL         "Overlapped",IDC_STYLE_OVERLAPPED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,25,60,53,10
+    CONTROL         "Popup",IDC_STYLE_POPUP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,91,60,36,10
+    CONTROL         "System Menu",IDC_STYLE_SYSMENU,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,50,121,59,10
+    GROUPBOX        "Window Type",IDC_STATIC,21,50,129,25
+END
+
+IDD_CAM_AND_VIEW_SETTINGS DIALOGEX 0, 0, 293, 107
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Camera and Viewport Settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,84,86,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,160,86,50,14
+    GROUPBOX        "Main View Settings",IDC_STATIC,7,7,127,74
+    CTEXT           "-------------------------------------------",IDC_STATIC,
+                    10,40,121,8
+    GROUPBOX        "Radar View Settings",IDC_STATIC,159,7,127,74
+    CTEXT           "-------------------------------------------",IDC_STATIC,
+                    162,40,121,8
+    CTEXT           "|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|",
+                    IDC_STATIC,141,9,12,71
+    PUSHBUTTON      "Camera Settings",IDC_BUTTON_MAIN_CAMERASETTINGS,36,21,
+                    70,14
+    PUSHBUTTON      "ViewPort Settings",IDC_BUTTON_MAIN_VIEWPORTSETTINGS,36,
+                    54,70,14
+    PUSHBUTTON      "Camera Settings",IDC_BUTTON_RADAR_CAMERASETTINGS,187,21,
+                    76,14
+    PUSHBUTTON      "ViewPort Settings",IDC_BUTTON_RADAR_VIEWPORTSETTINGS,
+                    187,54,76,14
+END
+
+IDD_DIALOG_CHAR_PROPERTIES DIALOGEX 0, 0, 178, 151
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Character Properties"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,29,130,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,99,130,50,14
+    EDITTEXT        IDD_CHARACTER_POSX,77,15,23,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    CTEXT           "Initial Position:",IDC_STATIC,16,16,49,10
+    CTEXT           "X",IDC_STATIC,82,6,15,8
+    EDITTEXT        IDD_CHARACTER_POSY,113,15,23,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    CTEXT           "Y",IDC_STATIC,117,6,15,8
+    CTEXT           "Initial Scale:",IDC_STATIC,12,33,49,10
+    EDITTEXT        IDD_CHARACTER_SCALE,94,32,23,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    CTEXT           "Initial Angle:",IDC_STATIC,12,50,49,10
+    EDITTEXT        IDD_CHARACTER_ANGLE,94,49,23,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    CTEXT           "Speed:",IDC_STATIC,11,67,35,10
+    EDITTEXT        IDD_CHARACTER_SPEED,94,67,23,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDD_CHARACTER_DIRECTIONX,78,109,23,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    CTEXT           "Vector Direction:",IDC_STATIC,17,110,55,10
+    CTEXT           "X",IDC_STATIC,82,101,15,8
+    EDITTEXT        IDD_CHARACTER_DIRECTIONY,114,109,23,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    CTEXT           "Y",IDC_STATIC,118,101,15,8
+    CTEXT           "Angular Speed:",IDC_STATIC,17,84,50,10
+    EDITTEXT        IDD_CHARACTER_ANGULARSPEED,94,84,23,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Pixels/Frame",IDC_STATIC,122,68,42,10
+    LTEXT           "Pixels/Frame",IDC_STATIC,122,85,42,10
+    LTEXT           "Degrees",IDC_STATIC,121,51,42,10
+END
+
+IDD_MOVEMENT DIALOGEX 0, 0, 330, 174
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Movement Pattern"
+MENU IDR_MOVEMENT_MENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,83,149,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,201,149,50,14
+    GROUPBOX        "",IDC_STATIC,19,7,296,133
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_LISTDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 212
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 277
+    END
+
+    IDD_GAMESETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 141
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 117
+    END
+
+    IDD_CAM_AND_VIEW_SETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 286
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 100
+    END
+
+    IDD_DIALOG_CHAR_PROPERTIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 171
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 144
+    END
+
+    IDD_MOVEMENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 323
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 167
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_CAMSETTINGS DIALOGEX 0, 0, 186, 198
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Camera Settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,37,177,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,106,177,50,14
+    GROUPBOX        "Camera Center",IDC_STATIC,7,7,71,49
+    LTEXT           "X:",IDC_STATIC,16,21,8,8
+    LTEXT           "Y:",IDC_STATIC,15,39,8,8
+    EDITTEXT        IDC_EDIT_CAM_CENTER_X,30,18,40,14,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CAM_CENTER_Y,30,35,40,14,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    GROUPBOX        "Camera Dimensions",IDC_STATIC,92,7,87,49
+    LTEXT           "Width:",IDC_STATIC,100,20,22,8
+    LTEXT           "Height:",IDC_STATIC,100,38,24,8
+    EDITTEXT        IDC_EDIT_CAM_WIDTH,128,17,40,14,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CAM_HEIGHT,128,36,40,14,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    GROUPBOX        "Misc",IDC_STATIC,7,61,172,36
+    LTEXT           "Angle:",IDC_STATIC,12,77,22,8
+    EDITTEXT        IDC_EDIT_CAM_ANGLE,37,74,40,14,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Scale:",IDC_STATIC,101,76,20,8
+    EDITTEXT        IDC_EDIT_CAM_SCALE,128,74,40,14,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    GROUPBOX        "Scrolling Bounding Box",IDC_STATIC,7,102,172,69
+    LTEXT           "Left:",IDC_STATIC,13,130,16,8
+    LTEXT           "Right:",IDC_STATIC,13,152,20,8
+    LTEXT           "Top:",IDC_STATIC,101,130,16,8
+    LTEXT           "Bottom:",IDC_STATIC,101,151,26,8
+    EDITTEXT        IDC_EDIT_SBB_LEFT,36,127,40,14,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SBB_RIGHT,35,149,40,14,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SBB_TOP,128,127,40,14,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SBB_BOTTOM,128,148,40,14,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    CONTROL         "On/Off",IDC_CHECK_SBB,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,13,113,39,10
+END
+
+IDD_DIALOG_VIEWSETTINGS DIALOGEX 0, 0, 186, 81
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "ViewPort Settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,60,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,60,50,14
+    GROUPBOX        "ViewPort Center",IDC_STATIC,7,3,71,49
+    LTEXT           "X:",IDC_STATIC,16,17,8,8
+    LTEXT           "Y:",IDC_STATIC,15,35,8,8
+    EDITTEXT        IDC_EDIT_VIEW_CENTER_X,30,14,40,14,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_VIEW_CENTER_Y,30,31,40,14,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    GROUPBOX        "ViewPort Dimensions",IDC_STATIC,92,3,87,49
+    LTEXT           "Width:",IDC_STATIC,100,16,22,8
+    LTEXT           "Height:",IDC_STATIC,100,34,24,8
+    EDITTEXT        IDC_EDIT_VIEW_WIDTH,128,13,40,14,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_VIEW_HEIGHT,128,32,40,14,ES_CENTER | 
+                    ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_CHAR_DESIGN DIALOGEX 0, 0, 231, 311
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Character Design"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Add To List",IDC_BUTTON_CHAR_ADD,7,285,50,20,0,
+                    WS_EX_DLGMODALFRAME
+    PUSHBUTTON      " Remove   From  List",IDC_BUTTON_CHAR_REMOVECHAR,69,285,
+                    50,20,BS_MULTILINE | BS_FLAT
+    PUSHBUTTON      "Properties",IDC_BUTTON_CHAR_PROPERTIES,69,263,50,14,0,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "Collision",IDC_BUTTON_CHAR_COLLISION,7,236,50,14,0,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "Save Changes",IDC_BUTTON_CHAR_SAVECHANGES,69,236,50,20,
+                    BS_VCENTER | BS_MULTILINE,WS_EX_STATICEDGE
+    PUSHBUTTON      "New Character",IDC_BUTTON_CHAR_NEWCHAR,7,257,50,20,
+                    BS_VCENTER | BS_MULTILINE,WS_EX_STATICEDGE
+    PUSHBUTTON      "Selection",IDC_BUTTON_CHAR_MODE,11,175,37,14
+    CONTROL         "Line",IDC_RADIO_DRAW_LINE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,12,31,29,10
+    CONTROL         "Circle",IDC_RADIO_DRAW_CIRCLE,"Button",
+                    BS_AUTORADIOBUTTON,12,45,33,10
+    CONTROL         "Triangle",IDC_RADIO_DRAW_TRIANGLE,"Button",
+                    BS_AUTORADIOBUTTON,12,61,41,10
+    CONTROL         "Filled",IDC_CHECK_DRAW_PRIMITIVE_FILLED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,87,54,32,10
+    LTEXT           "R:",IDC_STATIC_CHAR_RED,14,99,8,8
+    LTEXT           "G:",IDC_STATIC_CHAR_GREEN,14,116,8,8
+    LTEXT           "B:",IDC_STATIC_CHAR_BLUE,15,134,8,8
+    CONTROL         "Pick Color",IDC_BUTTON_CHAR_PICKCOLOR,"Button",
+                    BS_3STATE | BS_PUSHLIKE | WS_TABSTOP,63,134,48,13,
+                    WS_EX_DLGMODALFRAME
+    LISTBOX         IDC_LIST_CHAR,126,4,98,300,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Draw",IDC_BUTTON_CHAR_DRAW,7,236,50,14,0,
+                    WS_EX_STATICEDGE
+    EDITTEXT        IDC_EDIT_CHAR_RED,30,96,21,14,ES_CENTER | ES_NUMBER
+    EDITTEXT        IDC_EDIT_CHAR_GREEN,30,114,22,14,ES_CENTER | ES_NUMBER
+    EDITTEXT        IDC_EDIT_CHAR_BLUE,30,132,22,14,ES_CENTER | ES_NUMBER
+    LTEXT           "-->",IDC_STATIC_COMBINE_5,74,54,12,8
+    LTEXT           "<--",IDC_STATIC_COMBINE_4,57,62,10,8
+    LTEXT           "<--",IDC_STATIC_COMBINE_1,58,44,10,8
+    LTEXT           "|",IDC_STATIC_COMBINE_2,67,49,8,8
+    LTEXT           "|",IDC_STATIC_COMBINE_3,67,57,8,8
+    CONTROL         "Line",IDC_RADIO_CHAR_COLLISION_LINE,"Button",
+                    BS_AUTORADIOBUTTON,12,31,29,10
+    CONTROL         "Circle",IDC_RADIO_CHAR_COLLISION_CIRCLE,"Button",
+                    BS_AUTORADIOBUTTON,12,45,33,10
+    EDITTEXT        IDC_EDIT_CHAR_NAME,24,4,77,14,ES_CENTER | ES_AUTOHSCROLL
+    GROUPBOX        "Color Selection",IDC_STATIC_CHAR_COLORSELECTION,7,86,
+                    112,66
+    GROUPBOX        "Preview",IDC_STATIC_CHAR_COLORPREVIEW,68,102,37,30
+    PUSHBUTTON      "Source/Destination Rect...",IDC_BUTTON_CHAR_SDRECT,7,
+                    209,111,14,BS_FLAT
+    GROUPBOX        "Primitive Control",IDC_STATIC,7,21,112,56
+    PUSHBUTTON      "Remove Selected",IDC_BUTTON_CHAR_REMOVE,52,175,63,14
+    GROUPBOX        "Mode",IDC_STATIC,7,163,112,33
+END
+
+IDD_DIALOG_CHAR_SDRECT DIALOGEX 0, 0, 186, 106
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Source/Destination Rectangle"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,22,85,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,113,85,50,14
+    LTEXT           "WIDTH:",IDC_STATIC,7,21,26,8
+    LTEXT           "HEIGHT:",IDC_STATIC,7,47,28,8
+    EDITTEXT        IDC_EDIT_SWIDTH,43,18,40,14,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_EDIT_SHEIGHT,44,44,40,14,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    GROUPBOX        "Source (Red)",IDC_STATIC,4,8,86,55
+    LTEXT           "WIDTH:",IDC_STATIC,100,21,26,8
+    LTEXT           "HEIGHT:",IDC_STATIC,100,46,28,8
+    EDITTEXT        IDC_EDIT_DWIDTH,136,17,40,14,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_EDIT_DHEIGHT,136,44,40,14,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    GROUPBOX        "Destination (Blue)",IDC_STATIC,96,8,86,55
+    CONTROL         "Show Rects",IDC_CHECK_CHAR_SDRect_SHOW,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,68,68,53,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG_CAMSETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 191
+    END
+
+    IDD_DIALOG_VIEWSETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 74
+    END
+
+    IDD_DIALOG_CHAR_DESIGN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 224
+        VERTGUIDE, 212
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 304
+    END
+
+    IDD_DIALOG_CHAR_SDRECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 99
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_DROPPER             CURSOR                  "Dropper1.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "toolbar1.bmp"
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
